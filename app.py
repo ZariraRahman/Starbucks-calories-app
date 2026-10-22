@@ -11,8 +11,13 @@ st.title("☕ Starbucks Calories Predictor")
 st.write("Predict the calories in your Starbucks drink.")
 
 @st.cache_resource
+@st.cache_resource
 def load_model():
-    with open(os.path.join(os.path.dirname(_file_), "starbucks_decision_model_v1 (1).pkl"), "rb") as f:
+    model_path = os.path.join(
+        os.path.dirname(_file_),
+        "starbucks_decision_model_v1 (1).pkl"
+    )
+    with open(model_path, "rb") as f:
         return pickle.load(f)
 
 try:
