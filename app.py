@@ -12,7 +12,7 @@ st.write("Predict the calories in your Starbucks drink.")
 
 @st.cache_resource
 def load_model():
-    with open("Model v1.pkl", "rb") as f:
+    with open("starbucks_decision_model_v1 (1).pk", "rb") as f:
         return pickle.load(f)
 
 try:
