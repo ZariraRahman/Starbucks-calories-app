@@ -1,7 +1,7 @@
 import streamlit as st
 import pickle
 import pandas as pd
-
+import os
 st.set_page_config(
     page_title="Starbucks Calories Predictor",
     page_icon="☕"
@@ -12,7 +12,7 @@ st.write("Predict the calories in your Starbucks drink.")
 
 @st.cache_resource
 def load_model():
-    with open("starbucks_decision_model_v1 (1).pk", "rb") as f:
+    with open(os.path.join(os.path.dirname(_file_), "starbucks_decision_model_v1 (1).pkl"), "rb") as f:
         return pickle.load(f)
 
 try:
